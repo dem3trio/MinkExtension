@@ -19,6 +19,11 @@ env:
   - SYMFONY_VERSION=5.1.*
   - SYMFONY_VERSION=5.2.*
 
+jobs:
+  include:
+  - php: 8.0
+    env: SYMFONY_VERSION=6.0.*
+
 install:
   - composer require symfony/config:${SYMFONY_VERSION} --no-update --no-scripts --prefer-dist
   - composer update --no-progress
